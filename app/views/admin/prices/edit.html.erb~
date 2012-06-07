@@ -1,0 +1,12 @@
+<%= form_for resource do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+  <%= f.label :description %>:
+  <%= f.text_field :description %><br />
+
+  <%= f.label :value %>:
+  <%= f.text_field :value %><br />
+
+  <%= f.submit %>
+<% end %>

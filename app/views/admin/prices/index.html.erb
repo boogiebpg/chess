@@ -1,0 +1,53 @@
+<center><h1>Price</h1></center>
+
+<center><%= button_to "Add New", new_admin_price_url, :method => :get %></center>
+<br />
+<%= will_paginate @list, :class => "digg_pagination pg" %>
+<br />
+<table class="price_table">
+
+<tr>
+<th>
+#
+</th>
+<th>
+Name
+</th>
+<th>
+Description
+</th>
+<th>
+Price
+</th>
+<th>
+Delete
+</th>
+</tr>
+
+<% counter = 0 %>
+<% Array(@list).each do |item| %>
+<% counter += 1 %>
+<tr>
+<td>
+<%= counter %>
+</td>
+<td>
+<%= item.name %> 
+[ <%= link_to "edit", edit_admin_price_url(item.id) %> ]
+</td>
+<td>
+<%= item.description %> 
+</td>
+<td>
+<%= item.value %>
+</td>
+<td>
+<%= link_to "Delete", admin_price_url(item.id), :method => :delete, :confirm => "Are you sure?" %>
+</td>
+</tr>
+<% end %>
+</table>
+
+<br />
+<%= will_paginate @list, :class => "digg_pagination pg" %>
+<br />
