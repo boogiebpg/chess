@@ -13,6 +13,16 @@
 
 ActiveRecord::Schema.define(:version => 20120525160827) do
 
+  create_table "pictures", :force => true do |t|
+    t.string   "name"
+    t.integer  "avatar_uid"
+    t.string   "avatar_name"
+    t.string   "path"
+    t.string   "avatar"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "prices", :force => true do |t|
     t.string   "name"
     t.string   "description"

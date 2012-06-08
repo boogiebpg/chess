@@ -3,6 +3,8 @@ Prices::Application.routes.draw do
     resources :prices
     
   end
+  
+  resources :pictures
 
   match 'admin/' => 'admin/prices#index'
 

@@ -9,6 +9,14 @@ gem 'rails', '3.2.3'
 gem 'mysql'
 gem 'will_paginate'
 
+gem 'mini_magick'
+gem 'carrierwave'
+gem 'json'
+gem 'haml-rails'
+gem 'jquery-rails'
+gem 'twitter-bootstrap-rails'
+gem 'pry-rails'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -20,8 +28,6 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
-gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
