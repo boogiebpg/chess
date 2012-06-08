@@ -1,5 +1,7 @@
 <center><h1>Price</h1></center>
 
+<%= link_to "Import Excel file", new_admin_excel_url %>
+
 <center><%= button_to "Add New", new_admin_price_url, :method => :get %></center>
 <br />
 <%= will_paginate @list, :class => "digg_pagination pg" %>

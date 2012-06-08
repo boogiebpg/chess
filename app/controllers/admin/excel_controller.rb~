@@ -1,0 +1,11 @@
+class Admin::ExcelController < ApplicationController
+
+  def new
+    @new_excel = Excel.create
+  end
+
+  def create
+    redirect_to admin_prices_path
+  end
+
+end

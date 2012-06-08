@@ -1,27 +1,12 @@
 <%= form_for @price, url: admin_prices_path do |f| %>
-  <%= f.label :name %>:
+  <%= f.label :name %>
   <%= f.text_field :name %><br />
 
-  <%= f.label :description %>:
+  <%= f.label :description %>
   <%= f.text_field :description %><br />
 
-  <%= f.label :value %>:
+  <%= f.label :value %>
   <%= f.text_field :value %><br />
 
   <%= f.submit %>
 <% end %>
-
-
-<input id="fileupload" type="file" name="files[]" data-url="server/php/" multiple>
-<script>
-$(function () {
-    $('#fileupload').fileupload({
-        dataType: 'json',
-        done: function (e, data) {
-            $.each(data.result, function (index, file) {
-                $('<p/>').text(file.name).appendTo(document.body);
-            });
-        }
-    });
-});
-</script>

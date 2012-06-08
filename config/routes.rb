@@ -1,7 +1,7 @@
 Prices::Application.routes.draw do
   namespace :admin do
     resources :prices
-    
+    resources :excel
   end
   
   resources :pictures
