@@ -40,12 +40,15 @@
 <td>
 <%= item.category.try(:name) %> 
 </td>
+
 <td>
-<%= item.name %> 
+<%= item.try("name_#{I18n.locale}") %><br />
+[&nbsp;<%= link_to I18n.t("main_table.edit_link"), edit_admin_price_url(item.id) %>&nbsp;]
 </td>
 <td>
-<%= item.description %> 
+<%= item.try("description_#{I18n.locale}") %> 
 </td>
+
 <td>
 <%= item.value %>
 </td>
