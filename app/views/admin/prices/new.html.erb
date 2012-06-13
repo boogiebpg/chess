@@ -1,13 +1,18 @@
+<% tr_lang = (I18n.locale == :en ? "ru" : "en") %>
 <%= form_for @price, url: admin_prices_path do |f| %>
 
   <%= f.label t("main_table.category") %>
   <%= select_tag 'price[category_id]', options_for_select(nested_set_options(Category) {|i| "#{' - ' * i.level} #{i.name}" } ) %>
 
-  <%= f.label t("main_table.name") %>
-  <%= f.text_field :name %><br />
+  <% locales.each do |l|%>
+    <%= f.label t("main_table.name") + " - " + l %>
+    <%= f.text_field "name_#{l}" %><br />
+  <% end %>
 
-  <%= f.label t("main_table.desc") %>
-  <%= f.text_field :description %><br />
+  <% locales.each do |l|%>
+    <%= f.label t("main_table.desc") + " - " + l %>
+    <%= f.text_field "description_#{l}" %><br />
+  <% end %>
 
   <%= f.label t("main_table.price") %>
   <%= f.text_field :value %><br />

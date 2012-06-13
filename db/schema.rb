@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120612152045) do
+ActiveRecord::Schema.define(:version => 20120613175308) do
 
   create_table "auths", :force => true do |t|
     t.string   "name"
@@ -40,12 +40,14 @@ ActiveRecord::Schema.define(:version => 20120612152045) do
   end
 
   create_table "prices", :force => true do |t|
-    t.string   "name"
-    t.string   "description"
+    t.string   "name_en"
+    t.string   "description_en"
     t.float    "value"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.integer  "category_id"
+    t.string   "name_ru"
+    t.string   "description_ru"
   end
 
 end

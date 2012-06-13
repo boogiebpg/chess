@@ -20,6 +20,7 @@ gem 'pry-rails'
 gem 'spreadsheet'
 
 gem 'awesome_nested_set'
+gem 'globalize3'
 
 # Gems used only for assets and not required
 # in production environments by default.

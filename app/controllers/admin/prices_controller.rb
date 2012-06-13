@@ -1,6 +1,7 @@
 class Admin::PricesController < Admin::CommonController
 
   helper_method :resource
+  helper_method :locales
 
   def index
     @list = Price.paginate(page: params[:page], per_page: 10)
@@ -42,12 +43,16 @@ class Admin::PricesController < Admin::CommonController
   def destroy
     i = Price.find(params[:id])
     i.destroy
-    flash[:notice] = t("notice.deleted_ok", :name => i.name)
+    flash[:notice] = t("notice.deleted_ok", :name => i.try("name_#{I18n.locale}"))
     redirect_to admin_prices_url
   end
 
   def resource
     Price.find(params[:id])
+  end
+
+  def locales
+    ["en","ru"]
   end
 
 end
