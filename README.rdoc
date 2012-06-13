@@ -1,6 +1,9 @@
 == Chess admin
 
 User Part - localhost:3000
+
 Admin Part - localhost:3000/admin
 
 For the first time use login and password "admin"
+
+In public folder you can find example Excel file to for importing.
