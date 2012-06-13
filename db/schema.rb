@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120525160827) do
+ActiveRecord::Schema.define(:version => 20120612152045) do
+
+  create_table "auths", :force => true do |t|
+    t.string   "name"
+    t.string   "password"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string  "name"
+    t.integer "parent_id"
+    t.integer "lft"
+    t.integer "rgt"
+    t.integer "depth"
+  end
 
   create_table "pictures", :force => true do |t|
     t.string   "name"
@@ -21,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20120525160827) do
     t.string   "avatar"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "price_id"
   end
 
   create_table "prices", :force => true do |t|
@@ -29,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20120525160827) do
     t.float    "value"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "category_id"
   end
 
 end

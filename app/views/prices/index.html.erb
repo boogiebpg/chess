@@ -1,6 +1,4 @@
-<center><h1>Price</h1></center>
-
-
+<center><h2><%= t("user.prices") %></h2></center>
 
 <br />
 <%= will_paginate @list, :class => "digg_pagination pg" %>
@@ -12,22 +10,35 @@
 #
 </th>
 <th>
-Name
+<%= t("main_table.pic") %>
 </th>
 <th>
-Description
+<%= t("main_table.category") %>
 </th>
 <th>
-Price
+<%= t("main_table.name") %>
+</th>
+<th>
+<%= t("main_table.desc") %>
+</th>
+<th>
+<%= t("main_table.price") %>
 </th>
 </tr>
 
-<% counter = 0 %>
+<% params[:page].nil? ? counter = 0 : counter = params[:page].to_i*10-10 %>
 <% Array(@list).each do |item| %>
 <% counter += 1 %>
+<% !item.pictures.first.nil? ? img = File.dirname(item.pictures.first.try(:avatar).to_s)+"/thumb_"+File.basename(item.pictures.first.try(:avatar).to_s) : img = "/no_photo.jpg" %>
 <tr>
 <td>
 <%= counter %>
+</td>
+<td>
+<%= image_tag(img) %>
+</td>
+<td>
+<%= item.category.try(:name) %> 
 </td>
 <td>
 <%= item.name %> 

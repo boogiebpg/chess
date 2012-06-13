@@ -1,0 +1,9 @@
+<li id="li_<%= category.id %>">
+  <div class="edit" id="category_<%= category.id %>"><%= category.name %></div>
+
+  <% unless category.children.empty? %>
+    <ol>
+      <%= render :partial => "category", :collection => category.children %>
+    </ol>
+  <% end %>
+</li>

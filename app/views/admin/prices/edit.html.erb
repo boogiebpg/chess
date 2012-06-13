@@ -1,12 +1,27 @@
+<div id="tabs">
+	<ul>
+		<li><a href="#fields"><%= t("main_table.fields") %></a></li>
+		<li><a href="#pictures"><%= t("main_table.pics") %></a></li>
+		</ul>
+	<div id="fields">
 <%= form_for resource, url: admin_price_path(resource) do |f| %>
-  <%= f.label :name %>:
+
+  <%= f.label t("main_table.category") %>
+  <%= f.select :category_id, nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.name}" } %>
+ 
+  <%= f.label t("main_table.name") %>
   <%= f.text_field :name %><br />
 
-  <%= f.label :description %>:
+  <%= f.label t("main_table.desc") %>
   <%= f.text_field :description %><br />
 
-  <%= f.label :value %>:
+  <%= f.label t("main_table.price") %>
   <%= f.text_field :value %><br />
 
-  <%= f.submit %>
+  <%= f.submit t("form.save_btn"), :class => "btn btn-primary" %>
 <% end %>
+</div>
+<div id="pictures">
+<%= render "/shared/fileupload" %>
+</div>
+</div>

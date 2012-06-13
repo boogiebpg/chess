@@ -1,0 +1,21 @@
+class Admin::CategoriesController < ApplicationController
+
+  def new
+    
+  end
+
+  def create
+    Category.create name: "new"
+    redirect_to admin_categories_url
+  end
+
+  def save
+    cat_id = params[:id][/category_(\d+)/, 1]
+    c = Category.find cat_id
+    c.name = params[:value]
+    c.save!
+
+    render :text => c.name
+  end
+
+end

@@ -3,7 +3,7 @@
   %head
     %meta(charset="utf-8")
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    %title= content_for?(:title) ? yield(:title) : "Fily"
+    %title= content_for?(:title) ? yield(:title) : "Price"
     = csrf_meta_tags
     / Le HTML5 shim, for IE6-8 support of HTML elements
 
@@ -11,6 +11,7 @@
     = stylesheet_link_tag 'http://blueimp.github.com/cdn/css/bootstrap.min.css'
     = stylesheet_link_tag '/javascripts/jquery-file-upload/css/style.css'
     = stylesheet_link_tag "http://blueimp.github.com/cdn/css/bootstrap-responsive.min.css"
+    = stylesheet_link_tag 'application'
     /[if lt IE 7]
       = stylesheet_link_tag "http://blueimp.github.com/cdn/css/bootstrap-ie6.min.css"
     = stylesheet_link_tag "http://blueimp.github.com/Bootstrap-Image-Gallery/css/bootstrap-image-gallery.min.css"
@@ -18,9 +19,11 @@
     /[if lt IE 9]
       = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
 
-    = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'
-    = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js'
 
+
+    = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'
+
+    = javascript_include_tag "application"
 
     = javascript_include_tag 'http://blueimp.github.com/JavaScript-Templates/tmpl.min.js'
     = javascript_include_tag 'http://blueimp.github.com/JavaScript-Load-Image/load-image.min.js'
@@ -29,7 +32,7 @@
     = javascript_include_tag '/javascripts/jquery-file-upload/js/jquery.fileupload.js'
     = javascript_include_tag '/javascripts/jquery-file-upload/js/jquery.fileupload-ui.js'
 
-    = javascript_include_tag "application"
+
 
     -#= stylesheet_link_tag "application", :media => "all"
     = stylesheet_link_tag 'http://blueimp.github.com/cdn/css/bootstrap.min.css'
@@ -46,17 +49,24 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand(href="#") Fily
+         
+          = link_to t("menu_items.root"), root_path, :class => "brand"
+          
           .container.nav-collapse
             %ul.nav
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
+              %li= Auth.draw_admin_menu
+              %li= link_to t("menu_items.prices"), admin_path
+              %li= link_to t("menu_items.cats"), admin_categories_path
+              %li= link_to t("menu_items.pass"), admin_auth_url(1)
 
     .container
 
-      .notice
-        = flash[:notice]
+      - if flash[:notice]
+        .alert.alert-success
+          = flash[:notice]
+      - if flash[:alert]
+        .alert.alert-error
+          = flash[:alert]
 
       .content
         .row
@@ -64,12 +74,12 @@
             = yield
           .span3
             .well.sidebar-nav
-              %h3 Sidebar
+              %h3= t("lang.langs")
               %ul.nav.nav-list
-                %li.nav-header Sidebar
-                %li= link_to "Link 1", "/path1"
-                %li= link_to "Link 2", "/path2"
-                %li= link_to "Link 3", "/path3"
+                %li.nav-header= t("lang.select_lang")
+                %li= link_to "En", url_for( :locale => 'en' )
+                %li= link_to "Ru", url_for( :locale => 'ru' )
+                
     
       %footer
         %p &copy; Company 2012

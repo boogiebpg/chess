@@ -1,8 +1,10 @@
-<center><h1>Price</h1></center>
+<center><h2><%= t("menu_items.prices") %></h2></center>
 
-<%= link_to "Import Excel file", new_admin_excel_url %>
+<%= link_to t("form.add_new"), new_admin_price_path(:locale => 'ru'), :method => :get %>
+<br />
+<%= link_to t("form.import_excel"), new_admin_excel_url %>
 
-<center><%= button_to "Add New", new_admin_price_url, :method => :get %></center>
+
 <br />
 <%= will_paginate @list, :class => "digg_pagination pg" %>
 <br />
@@ -13,29 +15,42 @@
 #
 </th>
 <th>
-Name
+<%= t("main_table.pic") %>
 </th>
 <th>
-Description
+<%= t("main_table.category") %>
 </th>
 <th>
-Price
+<%= t("main_table.name") %>
 </th>
 <th>
-Delete
+<%= t("main_table.desc") %>
+</th>
+<th>
+<%= t("main_table.price") %>
+</th>
+<th>
+<%= t("main_table.delete") %>
 </th>
 </tr>
 
-<% counter = 0 %>
+<% params[:page].nil? ? counter = 0 : counter = params[:page].to_i*10-10 %>
 <% Array(@list).each do |item| %>
 <% counter += 1 %>
+<% !item.pictures.first.nil? ? img = File.dirname(item.pictures.first.try(:avatar).to_s)+"/thumb_"+File.basename(item.pictures.first.try(:avatar).to_s) : img = "/no_photo.jpg" %>
 <tr>
 <td>
 <%= counter %>
 </td>
 <td>
-<%= item.name %> 
-[ <%= link_to "edit", edit_admin_price_url(item.id) %> ]
+<%= image_tag(img) %>
+</td>
+<td>
+<%= item.category.try(:name) %> 
+</td>
+<td>
+<%= item.name %><br />
+[&nbsp;<%= link_to I18n.t("main_table.edit_link"), edit_admin_price_url(item.id) %>&nbsp;]
 </td>
 <td>
 <%= item.description %> 
@@ -44,7 +59,7 @@ Delete
 <%= item.value %>
 </td>
 <td>
-<%= link_to "Delete", admin_price_url(item.id), :method => :delete, :confirm => "Are you sure?" %>
+<%= link_to I18n.t("main_table.delete_link"), admin_price_url(item.id), :method => :delete, :confirm => I18n.t("main_table.confirm") %>
 </td>
 </tr>
 <% end %>
@@ -53,3 +68,5 @@ Delete
 <br />
 <%= will_paginate @list, :class => "digg_pagination pg" %>
 <br />
+
+

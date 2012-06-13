@@ -1,0 +1,13 @@
+<li id="li_<%= category.id %>">
+  
+  <div class="edit" style="display: inline-block; width: 300px;"  id="category_<%= category.id %>"><%= category.name %></div>
+  <div style="border:none;display: inline-block;"><%= link_to image_tag("/delete.gif", :border=>0), admin_category_path(category.id), :method => :delete %></div>
+  
+  
+
+  <% unless category.children.empty? %>
+    <ol>
+      <%= render :partial => "category", :collection => category.children %>
+    </ol>
+  <% end %>
+</li>

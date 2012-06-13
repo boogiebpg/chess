@@ -7,18 +7,23 @@
 	  background: #fbfbfb;
 }
 table.price_table {
-	  width: 70%;
+	  width: 96%;
 	  border: solid 1px #000;
 	  padding: 2px;
 	  background-color: #ddd;
-	  margin-left: 15%;
-	  margin-rigth: 15%;
+	  margin-left: 2%;
+	  margin-rigth: 2%;
 }
 .price_table th {
 	  background-color: #eef;
 }
 .pg {
-	  width: 20%;
-	  margin-left: 40%;
-	  margin-rigth: 40%;
+	  // width: 50%;
+	  // text-align: center;
+	  margin-left: 200px;
+	  // margin-rigth: 25%;
+}
+.notice {
+	font-weigth: bold;
+	color: #090;
 }

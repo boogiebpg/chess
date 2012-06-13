@@ -1,0 +1,80 @@
+ru:
+  user:
+    prices: "Товары"
+  fileupload:
+    add_files: "Добавить файлы..."
+    start_upload: "Начать загрузку"
+    cancel_upload: "Отменить загрузку"
+    delete_multi: "Удалить"
+    delete: "Удалить"
+  main_table:
+    pic: "Картинка"
+    pics: "Картинки"
+    fields: "Поля"
+    category: "Категория"
+    name: "Название"
+    desc: "Описание"
+    price: "Цена"
+    delete: "Удаление"
+    delete_link: "Удалить"
+    edit_link: "редактировать"
+    confirm: "Вы уверены?"
+  form:
+    create_btn: "Создать"
+    save_btn: "Сохранить"
+    add_new: "Добавить новый"
+    import_excel: "Импортировать Эксель-файл"
+    upload_file: "Выберите файл для импортирования"
+    load_btn: "Загрузить"
+  menu_items:
+    root: "Домой"
+    prices: "Редактирование товаров"
+    cats: "Редактирование категорий"
+    pass: "Редактирование Логина/Пароля"
+  cats:
+    click_cat: "Кликните на категорию для редактирования"
+    click_tip: "кликните для редактирования"
+    add_cat: "Добавить категорию"
+  auth:
+    name: "Логин"
+    password: "Пароль"
+  notice:
+    password_update_ok: "Логин и пароль были сохранены"
+    added_lines: "Добавлено строк: %{count}"
+    step1_ok: "Товар был создан! Теперь вы можете добавить картинки к нему."
+    updated_ok: "Сохранение товара прошло успешно!"
+    deleted_ok: "Товар %{name} был удален!"
+    cat_deleted_ok: "Категория %{name} была успешно удалена!"
+  alert:
+    excel_nofile: "Пожалуйста, выберите Excel файл"
+    invalid_format: "Неверный формат файла!"
+  lang:
+    langs: "Языки"
+    select_lang: "Выберите язык"
+  will_paginate:
+    next_label: Следующая →
+    page_entries_info:
+      single_page:
+        zero: ! '%{model} не найдены'
+        one: Отображена %{count} %{model}
+        few: Отображено %{count} %{model}
+        many: Отображено %{count} %{model}
+        other: Отображено %{count} %{model}
+      single_page_html:
+        zero: ! '%{model} не найдены'
+        one: Отображена <b>%{count}</b> %{model}
+        few: Отображено <b>%{count}</b> %{model}
+        many: Отображено <b>%{count}</b> %{model}
+        other: Отображено <b>%{count}</b> %{model}
+      multi_page:
+        one: Отображено %{model} %{from} - %{to} из %{count}
+        few: Отображено %{model} %{from} - %{to} из %{count}
+        many: Отображено %{model} %{from} - %{to} из %{count}
+        other: Отображено %{model} %{from} - %{to} из %{count}
+      multi_page_html:
+        one: Отображено %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> из <b>%{count}</b>
+        few: Отображено %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> из <b>%{count}</b>
+        many: Отображено %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> из <b>%{count}</b>
+        other: Отображено %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> из <b>%{count}</b>
+    page_gap: ! '&hellip;'
+    previous_label: ← Предыдущая

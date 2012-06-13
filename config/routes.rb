@@ -1,12 +1,24 @@
 Prices::Application.routes.draw do
   namespace :admin do
-    resources :prices
+    
+    resources :prices do
+      get 'add_pictures', :on => :member
+      resources :pictures
+    end
+    resources :pictures
     resources :excel
+    resources :categories do
+      post 'save', :on => :collection
+      get 'save_all', :on => :collection
+    end
+    resources :auth
+    
   end
   
-  resources :pictures
+  
 
-  match 'admin/' => 'admin/prices#index'
+    match 'admin/' => 'admin/prices#index'
+ 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -57,7 +69,9 @@ Prices::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
+  
   root :to => 'prices#index'
+  
 
   # See how all your routes lay out with "rake routes"
 

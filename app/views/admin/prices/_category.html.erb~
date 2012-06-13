@@ -1,0 +1,9 @@
+<li>
+  <%= category.name %>
+
+  <% unless category.children.empty? %>
+    <ul>
+      <%= render category.children %>
+    </ul>
+  <% end %>
+</li>

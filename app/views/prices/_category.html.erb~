@@ -1,0 +1,9 @@
+<li>
+  <%= your_model.name %>
+
+  <% unless your_model.children.empty? %>
+    <ul>
+      <%= render your_model.children %>
+    </ul>
+  <% end %>
+</li>

@@ -1,0 +1,11 @@
+<center><h2><%= t("menu_items.pass") %></h2></center>
+<%= form_for @auth, url: admin_auth_path(@auth) do |f| %>
+
+  <%= f.label t("auth.name") %>
+  <%= f.text_field :name %><br />
+
+  <%= f.label t("auth.password") %>
+  <%= f.password_field :password %><br />
+
+  <%= f.submit t("form.save_btn") %>
+<% end %>

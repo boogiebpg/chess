@@ -1,0 +1,44 @@
+<center><h2><%= t("menu_items.cats") %></h2></center>
+<br /><br />
+<%= t("cats.click_cat") %>
+<ol class="sortable">
+  
+    <%= render :partial => "category", :collection => Category.roots %>
+  
+</ol>
+
+<%= link_to t("cats.add_cat"), admin_categories_url, :method => :post %>
+<div id="saved"></div>
+<script>
+
+  $(document).ready(function(){
+
+    $('ol.sortable').nestedSortable({
+	disableNesting: 'no-nest',
+	forcePlaceholderSize: true,
+	handle: 'div',
+	helper:	'clone',
+	items: 'li',
+	maxLevels: 7,
+	opacity: .6,
+	placeholder: 'placeholder',
+	revert: 250,
+	tabSize: 25,
+	tolerance: 'pointer',
+	toleranceElement: '> div',
+	update: function(event, ui) {
+	  serialized = $('ol.sortable').nestedSortable('serialize', {startDepthCount: 0});
+	  console.log( serialized );
+	  $("#saved").load("/admin/categories/save_all?"+serialized );
+	}
+    });
+
+    $('.edit').editable('/admin/categories/save', {
+      indicator : 'Saving...',
+      tooltip   : '<%= t("cats.click_tip") %>',
+      style   : 'display: inline'
+    });
+
+  });
+</script>
+<br /><br />

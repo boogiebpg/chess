@@ -11,7 +11,7 @@ class Picture < ActiveRecord::Base
       "size" => avatar.size,
       "url" => avatar.url,
       "thumbnail_url" => avatar.thumb.url,
-      "delete_url" => picture_path(:id => id),
+      "delete_url" => admin_picture_path(:id => id),
       "delete_type" => "DELETE"
     }
   end

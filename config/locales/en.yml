@@ -2,10 +2,71 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  user:
+    prices: "Prices"
   fileupload:
     add_files: "Add files..."
     start_upload: "Start upload"
     cancel_upload: "Cancel upload"
     delete_multi: "Delete"
-    delete: "Löschen"
+    delete: "Delete"
+  main_table:
+    pic: "Picture"
+    pics: "Pictures"
+    fields: "Fields"
+    category: "Category"
+    name: "Name"
+    desc: "Description"
+    price: "Price"
+    delete: "Delete"
+    delete_link: "Delete"
+    edit_link: "edit"
+    confirm: "Are you sure?"
+  form:
+    create_btn: "Create"
+    save_btn: "Save"
+    add_new: "Add New"
+    import_excel: "Import Excel"
+    upload_file: "Select File for Import"
+    load_btn: "Load"
+  menu_items:
+    root: "Home"
+    prices: "Edit Prices"
+    cats: "Edit Categories"
+    pass: "Change Login/Password"
+  cats:
+    click_cat: "Click on Category to edit it"
+    click_tip: "click to edit"
+    add_cat: "Add Category"
+  auth:
+    name: "Login"
+    password: "Password"
+  notice:
+    password_update_ok: "Login and password were updated"
+    added_lines: "Added %{count} lines"
+    step1_ok: "Success! Add pictures now."
+    updated_ok: "Updated successfully!"
+    deleted_ok: "%{name} was successfully deleted!"
+    cat_deleted_ok: "Category %{name} was successfully removed!"
+  alert:
+    excel_nofile: "Please, select Excel file"
+    invalid_format: "Invalid file format!"
+  lang:
+    langs: "Languages"
+    select_lang: "Select Language"
+  will_paginate:
+    next_label: Next &#8594;
+    page_entries_info:
+      multi_page: Displaying %{model} %{from} - %{to} of %{count} in total
+      multi_page_html: Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b>
+        in total
+      single_page:
+        one: Displaying 1 %{model}
+        other: Displaying all %{count} %{model}
+        zero: No %{model} found
+      single_page_html:
+        one: Displaying <b>1</b> %{model}
+        other: Displaying <b>all&nbsp;%{count}</b> %{model}
+        zero: No %{model} found
+    page_gap: ! '&hellip;'
+    previous_label: ! '&#8592; Previous'

@@ -1,0 +1,17 @@
+ru:
+  fileupload:
+    add_files: "Добавить файлы..."
+    start_upload: "Начать загрузку"
+    cancel_upload: "Отменить загрузку"
+    delete_multi: "Удалить"
+    delete: "Удалить"
+  main_table:
+    pic: "Картинка"
+    category: "Категория"
+    name: "Название"
+    desc: "Описание"
+    price: "Цена"
+    delete: "Удаление"
+    delete_link: "Удалить"
+    edit_link: "редактировать"
+    confirm: "Вы уверены?"
