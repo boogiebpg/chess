@@ -48,6 +48,7 @@ ru:
   alert:
     excel_nofile: "Пожалуйста, выберите Excel файл"
     invalid_format: "Неверный формат файла!"
+    fill_in: "Пожалуйста, заполните все необходимые поля!"
   lang:
     langs: "Языки"
     select_lang: "Выберите язык"

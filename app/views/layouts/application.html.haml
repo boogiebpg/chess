@@ -52,12 +52,12 @@
          
           = link_to t("menu_items.root"), root_path, :class => "brand"
           
-          .container.nav-collapse
-            %ul.nav
-              %li= Auth.draw_admin_menu
-              %li= link_to t("menu_items.prices"), admin_path
-              %li= link_to t("menu_items.cats"), admin_categories_path
-              %li= link_to t("menu_items.pass"), admin_auth_url(1)
+          - if !request.env['HTTP_AUTHORIZATION'].nil?
+            .container.nav-collapse
+              %ul.nav
+                %li= link_to t("menu_items.prices"), admin_path
+                %li= link_to t("menu_items.cats"), admin_categories_path
+                %li= link_to t("menu_items.pass"), admin_auth_url(1)
 
     .container
 

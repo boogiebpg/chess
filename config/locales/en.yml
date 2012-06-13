@@ -51,6 +51,7 @@ en:
   alert:
     excel_nofile: "Please, select Excel file"
     invalid_format: "Invalid file format!"
+    fill_in: "Please fill in all required fields"
   lang:
     langs: "Languages"
     select_lang: "Select Language"

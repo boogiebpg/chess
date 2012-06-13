@@ -4,4 +4,6 @@ class Price < ActiveRecord::Base
   has_many :pictures
   belongs_to :category
   
+  validates_presence_of :name, :value
+
 end

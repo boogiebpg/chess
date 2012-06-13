@@ -1,7 +1,7 @@
 <%= form_for @price, url: admin_prices_path do |f| %>
 
   <%= f.label t("main_table.category") %>
-  <%= select_tag 'price[category_id]', options_for_select(nested_set_options(Category) {|i| "#{'--' * i.level} #{i.name}" } ) %>
+  <%= select_tag 'price[category_id]', options_for_select(nested_set_options(Category) {|i| "#{' - ' * i.level} #{i.name}" } ) %>
 
   <%= f.label t("main_table.name") %>
   <%= f.text_field :name %><br />

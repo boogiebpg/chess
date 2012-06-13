@@ -11,13 +11,14 @@ class Admin::PricesController < Admin::CommonController
   end
 
   def create
-    @p = Price.create params[:price]
-    # @price.save!
-
-    flash[:notice] = t("notice.step1_ok")
-
-    # redirect_to edit_admin_price_url(@p, anchor: "pictures")
-    redirect_to add_pictures_admin_price_url(@p)
+    @price = Price.create params[:price]
+    if @price.valid?
+      flash[:notice] = t("notice.step1_ok")
+      redirect_to add_pictures_admin_price_url(@price)
+    else
+      flash.now[:alert] = t("alert.fill_in")
+      render :action => "new"
+    end
   end
 
   def edit
